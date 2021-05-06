@@ -21,7 +21,18 @@ public class Stack {
         }
 
         public void pop(){
-            top--;
+            if(isEmpty()){
+                System.err.println("Can`t pop from empty stack");
+                return;
+            }else if(stackArray.length==1){
+                stackArray=null;
+                return;
+            }
+            int [] temp=new int[stackArray.length-1];
+            for (int i = 0; i < temp.length; i++) {
+                temp[i]=stackArray[i];
+            }
+            stackArray=temp;
         }
 
         public boolean isEmpty(){
@@ -37,7 +48,7 @@ public class Stack {
         }
 
         public void clear(){
-            stackArray[top]=-1;
+            //stackArray.length==null;
         }
 
         public void print(){
