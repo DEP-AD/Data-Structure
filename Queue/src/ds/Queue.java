@@ -1,8 +1,7 @@
 package ds;
 
 public class Queue {
-        int front;
-        int rear;
+
         int [] qArray;
 
         public void enqueue(int data){
@@ -17,8 +16,6 @@ public class Queue {
                         qTemp[qTemp.length-1]=data;
                         qArray=qTemp;
                 }
-
-
         }
 
         public void dequeue(){
@@ -31,7 +28,7 @@ public class Queue {
                 }
                 int [] temp=new int[qArray.length-1];
                 for (int i = 0; i < temp.length; i++) {
-                        temp[i]=qArray[i];
+                        temp[i]=qArray[i+1];
                 }
                 qArray=temp;
 
@@ -43,8 +40,8 @@ public class Queue {
 
         public int peek() {
                 if(isEmpty()){
-                        System.out.println("Stack is empty");
-                }
+                        throw new RuntimeException("Queue is empty");
+                }else
                 return qArray[0];
         }
 
@@ -65,6 +62,14 @@ public class Queue {
         }
 
         public boolean contains(int number){
+                if(isEmpty()){
+                        return false;
+                }
+                for (int i = 0; i < qArray.length; i++) {
+                        if(qArray[i]==number){
+                                return true;
+                        }
+                }
             return false;
         }
 

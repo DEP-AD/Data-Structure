@@ -44,7 +44,7 @@ public class Stack {
 
         public int peek(){
             if(isEmpty()){
-                System.out.println("Stack is empty");
+                throw new RuntimeException("Stack is empty");
             }
             return stackArray[stackArray.length-1];
         }
