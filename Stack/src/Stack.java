@@ -15,5 +15,9 @@ public class Stack {
         return true;
     }
 
+    public int peek(){
+        return stackArray[top];
+    }
+
 
 }
