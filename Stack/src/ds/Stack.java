@@ -2,7 +2,6 @@ package ds;
 
 public class Stack {
 
-        int top=0;
         private int [] stackArray;
 
         public void push (int data){
