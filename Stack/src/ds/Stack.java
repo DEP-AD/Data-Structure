@@ -40,15 +40,18 @@ public class Stack {
         }
 
         public int size(){
-            return stackArray.length;
+            return isEmpty() ? 0 : stackArray.length;
         }
 
         public int peek(){
-            return stackArray[top];
+            if(isEmpty()){
+                System.out.println("Stack is empty");
+            }
+            return stackArray[stackArray.length-1];
         }
 
         public void clear(){
-            //stackArray.length==null;
+            stackArray = null;
         }
 
         public void print(){
@@ -65,7 +68,16 @@ public class Stack {
         }
 
         public boolean contains(int number){
-            return true;
+            if(isEmpty()){
+                return false;
+            }
+
+            for (int i = 0; i < stackArray.length; i++) {
+                if(stackArray[i]==number){
+                    return true;
+                }
+            }
+            return false;
         }
 
 }
