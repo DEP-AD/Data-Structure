@@ -1,16 +1,19 @@
 public class Stack {
-    int index=-1;
+    int top=-1;
     int [] stackArray =new int[10];
 
     public void push (int data){
-        stackArray[index++]=data;
+        stackArray[top++]=data;
     }
 
     public void pop(){
-        index--;
+        top--;
     }
 
     public boolean empty(){
+        top=-1;
         return true;
     }
+
+
 }
