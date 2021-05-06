@@ -31,4 +31,8 @@ public class Stack {
         System.out.println("/b]");
     }
 
+    public boolean contains(int number){
+        return true;
+    }
+
 }
