@@ -19,5 +19,16 @@ public class Stack {
         return stackArray[top];
     }
 
+    public void clear(){
+        stackArray[top]=-1;
+    }
+
+    public void print(){
+        System.out.println("[ ");
+        for (int i =0; i<= stackArray.length-1;i++){
+            System.out.print(stackArray[top]+",");
+        }
+        System.out.println("/b]");
+    }
 
 }
