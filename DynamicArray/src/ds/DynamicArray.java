@@ -1,10 +1,16 @@
 package ds;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class DynamicArray {
 
     private int [] DynamicArray;
 
     public void add(int a){
+        int [] tempArray=new int[1];
+        tempArray[0]=a;
+        DynamicArray=tempArray;
 
     }
 
@@ -21,15 +27,16 @@ public class DynamicArray {
     }
 
     public void print(){
-
+        System.out.println(Arrays.toString(DynamicArray));
     }
 
     public void clear(){
+        DynamicArray=null;
 
     }
 
     public int size(){
-        return 0;
+        return DynamicArray.length;
     }
 
     public boolean contains(int number){
