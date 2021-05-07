@@ -22,6 +22,25 @@ public class DynamicArray {
     }
 
     public void add(int index, int number){
+        /**int [] tempArray=new int[size()+1];
+        for (int i = 0; i < index; i++) {
+            tempArray[i]=dynamicArray[i];
+        }
+        tempArray[index]=number;
+        for (int i = index+1; i < tempArray.length; i++) {
+                tempArray[i] = dynamicArray[i-1];
+        }
+        dynamicArray=tempArray;*/
+
+        int [] tempArray=new int[size()+1];
+        for (int i = 0; i < tempArray.length; i++) {
+            if(i<index) {
+                tempArray[i] = dynamicArray[i];
+            }else if(i==index) {
+                tempArray[index] = number;
+            }else tempArray[i]=dynamicArray[i-1];
+        }
+        dynamicArray=tempArray;
 
     }
 

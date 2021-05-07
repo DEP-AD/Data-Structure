@@ -5,7 +5,10 @@ public class DynamicArrayTest {
         DynamicArray dynamicArray = new DynamicArray();
         dynamicArray.add(10);
         dynamicArray.add(20);
-        //dynamicArray.add(30,40);
+        dynamicArray.add(30);
+        dynamicArray.add(40);
+        dynamicArray.print();
+        dynamicArray.add(1,15);
         dynamicArray.print();
 
     }
