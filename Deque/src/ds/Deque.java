@@ -2,19 +2,19 @@ package ds;
 
 class Queue {
 
-    int [] qArray;
+    int [] queueArray;
 
     public void enqueue(int data){
         if(isEmpty()){
-            qArray=new int[1];
-            qArray[0]=data;
+            queueArray=new int[1];
+            queueArray[0]=data;
         }else{
-            int [] qTemp = new int[qArray.length+1];
-            for (int i = 0; i < qArray.length; i++) {
-                qTemp[i]=qArray[i];
+            int [] qTemp = new int[queueArray.length+1];
+            for (int i = 0; i < queueArray.length; i++) {
+                qTemp[i]=queueArray[i];
             }
             qTemp[qTemp.length-1]=data;
-            qArray=qTemp;
+            queueArray=qTemp;
         }
     }
 
@@ -22,31 +22,31 @@ class Queue {
         if(isEmpty()){
             System.err.println("Can`t dequeue from empty queue");
             return;
-        }else if(qArray.length==1){
-            qArray=null;
+        }else if(queueArray.length==1){
+            queueArray=null;
             return;
         }
-        int [] temp=new int[qArray.length-1];
+        int [] temp=new int[queueArray.length-1];
         for (int i = 0; i < temp.length; i++) {
-            temp[i]=qArray[i+1];
+            temp[i]=queueArray[i+1];
         }
-        qArray=temp;
+        queueArray=temp;
 
     }
 
     public boolean isEmpty(){
-        return qArray==null ;
+        return queueArray==null ;
     }
 
     public int peek() {
         if(isEmpty()){
             throw new RuntimeException("Queue is empty");
         }
-        return qArray[qArray.length-1];
+        return queueArray[queueArray.length-1];
     }
 
     public int size(){
-        return qArray==null ? 0 : qArray.length;
+        return queueArray==null ? 0 : queueArray.length;
     }
 
     public void print(){
@@ -55,8 +55,8 @@ class Queue {
             return;
         }
         System.out.print("[");
-        for (int i = qArray.length-1; i >=0; i--) {
-            System.out.print(qArray[i]+", ");
+        for (int i = queueArray.length-1; i >=0; i--) {
+            System.out.print(queueArray[i]+", ");
         }
         System.out.println("\b\b]");
     }
@@ -65,8 +65,8 @@ class Queue {
         if(isEmpty()){
             return false;
         }
-        for (int i = 0; i < qArray.length; i++) {
-            if(qArray[i]==number){
+        for (int i = 0; i < queueArray.length; i++) {
+            if(queueArray[i]==number){
                 return true;
             }
         }
@@ -74,29 +74,26 @@ class Queue {
     }
 
     public void clear(){
-        qArray=null;
+        queueArray=null;
     }
 }
 
 
 public class Deque extends Queue{
 
-    private int rear;
-    private int front;
-    private int [] dequeArray;
 
     public  void enqueueRear(int data){
         if(isEmpty()){
             int [] dequeTemp = new int[1];
-            dequeTemp[0]=dequeArray[0];
-            dequeArray=dequeTemp;
+            dequeTemp[0]=queueArray[0];
+            queueArray=dequeTemp;
         }
-        int [] dequeTemp = new int[dequeArray.length+1];
-        for (int i = 0; i < dequeArray.length; i++) {
-            dequeTemp[i]=dequeArray[i];
+        int [] dequeTemp = new int[queueArray.length+1];
+        for (int i = 0; i < queueArray.length; i++) {
+            dequeTemp[i+1]=queueArray[i];
         }
-        dequeTemp[dequeArray.length]=data;
-        dequeArray=dequeTemp;
+        dequeTemp[0]=data;
+        queueArray=dequeTemp;
 
     }
 
@@ -104,16 +101,15 @@ public class Deque extends Queue{
         if(isEmpty()){
             System.err.println("Can`t dequeue from empty queue");
             return;
-        }else if(qArray.length==1){
-            qArray=null;
+        }else if(queueArray.length==1){
+            queueArray=null;
             return;
         }
-        int [] dequeTemp = new int[dequeArray.length+1];
-
-        for (int i = 0; i < dequeArray.length; i++) {
-            dequeTemp[i]=dequeArray[i++];
+        int [] dequeTemp = new int[queueArray.length+1];
+        for (int i = 0; i < queueArray.length; i++) {
+            dequeTemp[i]=queueArray[i++];
         }
-        dequeArray[i]=dequeArray[i++];
+        queueArray=dequeTemp;
 
     }
 
