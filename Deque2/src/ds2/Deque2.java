@@ -1,23 +1,24 @@
 package ds2;
+
 import ds.Queue;
 
 public class Deque2 extends Queue {
-    {
+
 
         public  void enqueueRear(int data){
-        if(isEmpty()){
-            int [] dequeTemp = new int[1];
-            dequeTemp[0]=queueArray[0];
+            if(isEmpty()){
+                int [] dequeTemp = new int[1];
+                dequeTemp[0]=queueArray[0];
+                queueArray=dequeTemp;
+            }
+            int [] dequeTemp = new int[queueArray.length+1];
+            for (int i = 0; i < queueArray.length; i++) {
+                dequeTemp[i+1]=queueArray[i];
+            }
+            dequeTemp[0]=data;
             queueArray=dequeTemp;
-        }
-        int [] dequeTemp = new int[queueArray.length+1];
-        for (int i = 0; i < queueArray.length; i++) {
-            dequeTemp[i+1]=queueArray[i];
-        }
-        dequeTemp[0]=data;
-        queueArray=dequeTemp;
 
-    }
+        }
 
         public void dequeueFront(){
         if(isEmpty()){
@@ -36,4 +37,4 @@ public class Deque2 extends Queue {
     }
 
 
-    }
+}
