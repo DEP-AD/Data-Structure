@@ -86,6 +86,17 @@ public class Deque extends Queue{
     private int [] dequeArray;
 
     public  void enqueueRear(int data){
+        if(isEmpty()){
+            int [] dequeTemp = new int[1];
+            dequeTemp[0]=dequeArray[0];
+            dequeArray=dequeTemp;
+        }
+        int [] dequeTemp = new int[dequeArray.length+1];
+        for (int i = 0; i < dequeArray.length; i++) {
+            dequeTemp[i]=dequeArray[i];
+        }
+        dequeTemp[dequeArray.length]=data;
+        dequeArray=dequeTemp;
 
     }
 
