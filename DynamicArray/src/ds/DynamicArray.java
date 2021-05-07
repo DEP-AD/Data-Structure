@@ -7,7 +7,8 @@ public class DynamicArray {
     private int [] dynamicArray;
 
     public void add(int number){
-        if(isEmpty()) {
+        add(size(),number);
+       /** if(isEmpty()) {
             int[] tempArray = new int[1];
             tempArray[0]=number;
             dynamicArray=tempArray;
@@ -18,7 +19,7 @@ public class DynamicArray {
             }
             tempArray[tempArray.length - 1] = number;
             dynamicArray = tempArray;
-        }
+        }*/
     }
 
     public void add(int index, int number){
@@ -52,8 +53,29 @@ public class DynamicArray {
     }
 
     public void remove(int index){
-        
+        if(index>=size() || index<0){
+            throw new RuntimeException("Invalid array index");
+        }
+        int [] tempArray = new int[size()-1];
+        //method 1
+        /**for (int i = 0; i < size(); i++) {
+            if(i<index){
+                tempArray[i]=dynamicArray[i];
+            }else if(i==index){
+                continue;
+            }else{
+                tempArray[i-1]=dynamicArray[i];
+            }
+        }*/
 
+        //method 2
+        for (int i = 0; i < tempArray.length; i++) {
+            if(i<index)
+            tempArray[i]=dynamicArray[i];
+            else if(i>=index)
+                tempArray[i]=dynamicArray[i+1];
+        }
+        dynamicArray=tempArray;
     }
 
     public int get(int index){

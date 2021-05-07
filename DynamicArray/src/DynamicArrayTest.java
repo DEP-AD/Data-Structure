@@ -15,6 +15,12 @@ public class DynamicArrayTest {
         dynamicArray.print();
         dynamicArray.add(2,25);
         dynamicArray.print();
+        dynamicArray.add(4,35);
+        dynamicArray.print();
+        dynamicArray.remove(2);
+        dynamicArray.print();
+        dynamicArray.remove(-2);
+        dynamicArray.print();
 
     }
 }
