@@ -19,14 +19,17 @@ public class DynamicArrayTest {
         dynamicArray.print();
         dynamicArray.remove(2);
         dynamicArray.print();
-        /*//dynamicArray.remove(-2);
-        //dynamicArray.print();*/
+       /** dynamicArray.remove(-2);
+        dynamicArray.print();*/
         System.out.println(dynamicArray.get(5));
         System.out.println(dynamicArray.contains(35));
         System.out.println(dynamicArray.contains(50));
         dynamicArray.clear();
         dynamicArray.print();
-
+        dynamicArray.add(10);
+        dynamicArray.remove(0);
+        dynamicArray.print();
+        System.out.println(dynamicArray.isEmpty());
 
 
     }

@@ -56,6 +56,10 @@ public class DynamicArray {
         if(index>=size() || index<0){
             throw new RuntimeException("Invalid array index");
         }
+        if(size()-1==0){
+            clear();
+            return;
+        }
         int [] tempArray = new int[size()-1];
         //method 1
         /**for (int i = 0; i < size(); i++) {
