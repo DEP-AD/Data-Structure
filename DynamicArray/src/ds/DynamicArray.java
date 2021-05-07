@@ -79,7 +79,10 @@ public class DynamicArray {
     }
 
     public int get(int index){
-        return 0;
+        if(index>=size() || index<0){
+            throw new RuntimeException("Invalid array index");
+        }
+        return dynamicArray[index];
     }
 
     public void print(){
@@ -96,6 +99,13 @@ public class DynamicArray {
     }
 
     public boolean contains(int number){
+        if(isEmpty()) {
+            return false;
+        }
+        for (int i = 0; i < size(); i++) {
+            if(dynamicArray[i]==number)
+                return true;
+        }
         return false;
     }
 
