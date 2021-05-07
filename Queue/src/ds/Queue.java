@@ -41,8 +41,8 @@ public class Queue {
         public int peek() {
                 if(isEmpty()){
                         throw new RuntimeException("Queue is empty");
-                }else
-                return qArray[0];
+                }
+                return qArray[qArray.length-1];
         }
 
         public int size(){

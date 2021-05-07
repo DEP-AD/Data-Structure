@@ -21,6 +21,5 @@ public class QueueTest {
         queue.clear();
         queue.print();
         queue.dequeue();
-
     }
 }
