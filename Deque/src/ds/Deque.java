@@ -101,6 +101,19 @@ public class Deque extends Queue{
     }
 
     public void dequeueFront(){
+        if(isEmpty()){
+            System.err.println("Can`t dequeue from empty queue");
+            return;
+        }else if(qArray.length==1){
+            qArray=null;
+            return;
+        }
+        int [] dequeTemp = new int[dequeArray.length+1];
+
+        for (int i = 0; i < dequeArray.length; i++) {
+            dequeTemp[i]=dequeArray[i++];
+        }
+        dequeArray[i]=dequeArray[i++];
 
     }
 
