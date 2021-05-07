@@ -1,24 +1,32 @@
 package ds;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class DynamicArray {
 
-    private int [] DynamicArray;
+    private int [] dynamicArray;
 
-    public void add(int a){
-        int [] tempArray=new int[1];
-        tempArray[0]=a;
-        DynamicArray=tempArray;
-
+    public void add(int number){
+        if(isEmpty()) {
+            int[] tempArray = new int[1];
+            tempArray[0]=number;
+            dynamicArray=tempArray;
+        }else {
+            int[] tempArray = new int[dynamicArray.length + 1];
+            for (int i = 0; i < dynamicArray.length; i++) {
+                tempArray[i] = dynamicArray[i];
+            }
+            tempArray[tempArray.length - 1] = number;
+            dynamicArray = tempArray;
+        }
     }
 
-    public void add(int a, int b){
+    public void add(int index, int number){
 
     }
 
     public void remove(int index){
+        
 
     }
 
@@ -27,16 +35,16 @@ public class DynamicArray {
     }
 
     public void print(){
-        System.out.println(Arrays.toString(DynamicArray));
+        System.out.println(isEmpty() ? "[]" : Arrays.toString(dynamicArray));
     }
 
     public void clear(){
-        DynamicArray=null;
+        dynamicArray=null;
 
     }
 
     public int size(){
-        return DynamicArray.length;
+        return isEmpty() ? 0 : dynamicArray.length;
     }
 
     public boolean contains(int number){
@@ -44,7 +52,7 @@ public class DynamicArray {
     }
 
     public boolean isEmpty(){
-        return false;
+        return dynamicArray==null;
     }
 
 
