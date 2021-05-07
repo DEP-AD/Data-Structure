@@ -22,6 +22,11 @@ public class DynamicArray {
     }
 
     public void add(int index, int number){
+        if(index>size() || index<0){
+            throw new RuntimeException("Invalid array index");
+
+        }
+        //method 1
         /**int [] tempArray=new int[size()+1];
         for (int i = 0; i < index; i++) {
             tempArray[i]=dynamicArray[i];
@@ -32,6 +37,8 @@ public class DynamicArray {
         }
         dynamicArray=tempArray;*/
 
+
+        //method 2
         int [] tempArray=new int[size()+1];
         for (int i = 0; i < tempArray.length; i++) {
             if(i<index) {

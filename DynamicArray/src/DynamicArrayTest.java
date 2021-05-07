@@ -8,7 +8,12 @@ public class DynamicArrayTest {
         dynamicArray.add(30);
         dynamicArray.add(40);
         dynamicArray.print();
-        dynamicArray.add(1,15);
+        dynamicArray.add(100);
+        dynamicArray.add(200);
+        dynamicArray.print();
+        dynamicArray.add(2,15);
+        dynamicArray.print();
+        dynamicArray.add(2,25);
         dynamicArray.print();
 
     }
